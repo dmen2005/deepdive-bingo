@@ -18,9 +18,9 @@ public class tileloader : MonoBehaviour
         int y = LatToTileY(latitude, zoom);
 
         // use in testing so not get bloked
-        string url = $"https://a.tile.openstreetmap.fr/osmfr/{zoom}/{x}/{y}.png";
+        //  string url = $"https://a.tile.openstreetmap.fr/osmfr/{zoom}/{x}/{y}.png";
 
-        // string url = $"https://tile.openstreetmap.org/{zoom}/{x}/{y}.png";
+        string url = $"https://tile.openstreetmap.org/{zoom}/{x}/{y}.png";
         // use in final build
         StartCoroutine(LoadTile(url));
     }
@@ -31,9 +31,14 @@ public class tileloader : MonoBehaviour
         yield return www.SendWebRequest();
 
         if (www.result != UnityWebRequest.Result.Success)
+        {
             Debug.LogError(www.error);
+            yield return new WaitForSeconds(5);
+            StartCoroutine(LoadTile(url));
+        }
         else
             tileRenderer.material.mainTexture = DownloadHandlerTexture.GetContent(www);
+
     }
 
     int LonToTileX(double lon, int zoom) =>
