@@ -14,17 +14,17 @@ public class gps : MonoBehaviour
 
     void Start()
     {
-         /*
-            if (!Input.location.isEnabledByUser)
-            {
-                Debug.LogError("Location services are not enabled on this device.");
-                return;
-            }
+        
+           //if (!Input.location.isEnabledByUser)
+           //{
+           //    Debug.LogError("Location services are not enabled on this device.");
+           //    return;
+           //}
 
-            Input.location.Start();
-         */
+           //Input.location.Start();
+        
 
-            InvokeRepeating("UpdateGPS", 0f, update);
+        InvokeRepeating("UpdateGPS", 0f, update);
     }
 
     void UpdateGPS()
@@ -34,42 +34,27 @@ public class gps : MonoBehaviour
             float latitude = lattest;
             float longitude = longtest;
 
-            // float latitude = Input.location.lastData.latitude;
-            // float longitude = Input.location.lastData.longitude;
+        //float latitude = Input.location.lastData.latitude;
+        // float longitude = Input.location.lastData.longitude;
 
 
 
-            tileloader.latitude = latitude;
-            tileloader.longitude = longitude;
+        tileloader.latitude = latitude;
+        tileloader.longitude = longitude;
 
-            tileloader.location();
+        tileloader.location();
         //}
-       // else
+        //else
         //{
-          //  Debug.LogError("Unable to get GPS data.");
+        //    Debug.LogError("Unable to get GPS data.");
         //}
     }
 
-    void OnDisable()
-    {
-        if (Input.location.isEnabledByUser)
-        {
-            Input.location.Stop();
-        }
-    }
+    //    void OnDisable()
+    //{
+    //    if (Input.location.isEnabledByUser)
+    //    {
+    //        Input.location.Stop();
+    //    }
+    //}
 }
-/*
- todo
- 
- Android:
-Go to Edit > Project Settings > Player.
-
-Select Android.
-
-Under Other Settings, scroll to Identification.
-
-Make sure you have Location permission enabled.
-
-iOS:
-Under Player Settings > iOS, ensure that you have set the required location permissions in the Info.plist file.
- */
