@@ -14,28 +14,28 @@ public class gps : MonoBehaviour
 
     void Start()
     {
-         /*
-            if (!Input.location.isEnabledByUser)
-            {
-                Debug.LogError("Location services are not enabled on this device.");
-                return;
-            }
 
-            Input.location.Start();
-         */
+        if (!Input.location.isEnabledByUser)
+        {
+            Debug.LogError("Location services are not enabled on this device.");
+            return;
+        }
 
-            InvokeRepeating("UpdateGPS", 0f, update);
+        Input.location.Start();
+
+
+        InvokeRepeating("UpdateGPS", 0f, update);
     }
 
     void UpdateGPS()
     {
-        //if (Input.location.status == LocationServiceStatus.Running)
-        //{
-            float latitude = lattest;
-            float longitude = longtest;
+        if (Input.location.status == LocationServiceStatus.Running)
+        {
+            //float latitude = lattest;
+            //float longitude = longtest;
 
-            // float latitude = Input.location.lastData.latitude;
-            // float longitude = Input.location.lastData.longitude;
+            float latitude = Input.location.lastData.latitude;
+            float longitude = Input.location.lastData.longitude;
 
 
 
@@ -43,11 +43,11 @@ public class gps : MonoBehaviour
             tileloader.longitude = longitude;
 
             tileloader.location();
-        //}
-       // else
-        //{
-          //  Debug.LogError("Unable to get GPS data.");
-        //}
+        }
+        else
+        {
+            Debug.LogError("Unable to get GPS data.");
+        }
     }
 
     void OnDisable()
