@@ -9,8 +9,8 @@ public class tileloader : MonoBehaviour
 {
     public Renderer tileRenderer;
     public int zoom = 15;
-    public double latitude = 53.2194;
-    public double longitude = 6.5665;
+    [HideInInspector] public double latitude = 53.2194;
+    [HideInInspector] public double longitude = 6.5665;
 
     public void location()
     {
