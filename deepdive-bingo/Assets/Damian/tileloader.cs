@@ -15,7 +15,12 @@ public class tileloader : MonoBehaviour
     {
         int x = LonToTileX(longitude, zoom);
         int y = LatToTileY(latitude, zoom);
-        string url = $"https://tile.openstreetmap.org/{zoom}/{x}/{y}.png";
+
+        // use in testing so not get bloked
+        string url = $"https://a.tile.openstreetmap.fr/osmfr/{zoom}/{x}/{y}.png";
+
+      // string url = $"https://tile.openstreetmap.org/{zoom}/{x}/{y}.png";
+      // use in final build
         StartCoroutine(LoadTile(url));
     }
 
