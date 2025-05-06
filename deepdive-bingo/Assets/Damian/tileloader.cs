@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using System;
+using static UnityEditor.FilePathAttribute;
 
 
 public class tileloader : MonoBehaviour
@@ -11,7 +12,7 @@ public class tileloader : MonoBehaviour
     public double latitude = 53.2194;
     public double longitude = 6.5665;
 
-    void Start()
+    public void location()
     {
         int x = LonToTileX(longitude, zoom);
         int y = LatToTileY(latitude, zoom);
@@ -19,8 +20,8 @@ public class tileloader : MonoBehaviour
         // use in testing so not get bloked
         string url = $"https://a.tile.openstreetmap.fr/osmfr/{zoom}/{x}/{y}.png";
 
-      // string url = $"https://tile.openstreetmap.org/{zoom}/{x}/{y}.png";
-      // use in final build
+        // string url = $"https://tile.openstreetmap.org/{zoom}/{x}/{y}.png";
+        // use in final build
         StartCoroutine(LoadTile(url));
     }
 
