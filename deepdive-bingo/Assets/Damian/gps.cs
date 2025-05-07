@@ -7,32 +7,29 @@ public class gps : MonoBehaviour
     public tileloader tileloader;
     public float update = 10f;
 
-    public float lattest = 53.2194f;
-    public float longtest = 6.5665f;
+    public double lattest = 53.2132367;
+    public double longtest = 6.5558798;
 
+    //all the comments is for when gps is working to lazzy for cleaner solotion rn
 
-    void Start()
+    void Awake()
     {
-
-        if (!Input.location.isEnabledByUser)
+        if (Input.location.isEnabledByUser)
         {
-            Debug.LogError("Location services are not enabled on this device.");
+            //Debug.LogError("Location services are not enabled on this device.");
+            Input.location.Start();
         }
-
-        Input.location.Start();
-
 
         InvokeRepeating("UpdateGPS", 0f, update);
     }
 
     void UpdateGPS()
     {
+        Debug.Log("Test");
         if (Input.location.status == LocationServiceStatus.Running)
         {
-
-
-            float latitude = Input.location.lastData.latitude;
-            float longitude = Input.location.lastData.longitude;
+            double latitude = Input.location.lastData.latitude;
+            double longitude = Input.location.lastData.longitude;
 
 
 
@@ -43,8 +40,8 @@ public class gps : MonoBehaviour
         }
         else
         {
-            float latitude = lattest;
-            float longitude = longtest;
+            double latitude = lattest;
+            double longitude = longtest;
 
             tileloader.latitude = latitude;
             tileloader.longitude = longitude;
