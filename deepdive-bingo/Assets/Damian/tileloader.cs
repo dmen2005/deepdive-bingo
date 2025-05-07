@@ -16,7 +16,6 @@ public class tileloader : MonoBehaviour
     {
         int x = LonToTileX(longitude, zoom);
         int y = LatToTileY(latitude, zoom);
-
         // use in testing so not get bloked
         //  string url = $"https://a.tile.openstreetmap.fr/osmfr/{zoom}/{x}/{y}.png";
 
