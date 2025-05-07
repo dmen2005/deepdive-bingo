@@ -1,5 +1,3 @@
-using System.Globalization;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class find_the: MonoBehaviour
