@@ -1,0 +1,2 @@
+C:\Users\svenr\OneDrive - Noorderpoort\Documenten\GitHub\deepdive-bingo\deepdive-bingo\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\svenr\OneDrive - Noorderpoort\Documenten\GitHub\deepdive-bingo\deepdive-bingo\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
