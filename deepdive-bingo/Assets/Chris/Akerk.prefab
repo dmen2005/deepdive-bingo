@@ -972,7 +972,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: \De Akerk, gelegen in het oudste deel van de stad, is een indrukwekkend
+    gotisch bouwwerk uit de 13e en 15e eeuw. Hoewel de kerk niet langer religieus
+    wordt gebruikt, doet het nu dienst als culturele locatie voor tentoonstellingen
+    en evenementen. Opvallend is het losstaande karakter van de toren, en binnen
+    vind je een prachtig orgel uit de 17e eeuw. De Akerk weerspiegelt de rijke middeleeuwse
+    geschiedenis van Groningen.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -999,8 +1004,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1037,7 +1042,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -634.18286, w: -539.8684}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
