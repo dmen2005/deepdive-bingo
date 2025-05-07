@@ -11,11 +11,11 @@ public class tileloader : MonoBehaviour
     [HideInInspector] public double latitude;
     [HideInInspector] public double longitude;
 
-
     public void location()
     {
-        int x = LonToTileX(longitude, zoom);
-        int y = LatToTileY(latitude, zoom);
+        float x = (float)Math.Round(LonToTileX(longitude, zoom), 5);
+        float y = (float)Math.Round(LatToTileY(latitude, zoom), 5);
+        Debug.Log(x); Debug.Log(y);
         // use in testing so not get bloked
         //  string url = $"https://a.tile.openstreetmap.fr/osmfr/{zoom}/{x}/{y}.png";
 
@@ -31,7 +31,7 @@ public class tileloader : MonoBehaviour
 
         if (www.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError(www.error);
+            Debug.LogWarning(www.error);
             yield return new WaitForSeconds(5);
             StartCoroutine(LoadTile(url));
         }
@@ -40,12 +40,12 @@ public class tileloader : MonoBehaviour
 
     }
 
-    int LonToTileX(double lon, int zoom) =>
-        (int)((lon + 180.0) / 360.0 * (1 << zoom));
+    double LonToTileX(double lon, int zoom) =>
+        (double)((lon + 180.0) / 360.0 * (1 << zoom));
 
-    int LatToTileY(double lat, int zoom)
+    double LatToTileY(double lat, int zoom)
     {
         double latRad = lat * Math.PI / 180.0;
-        return (int)((1.0 - Math.Log(Math.Tan(latRad) + 1.0 / Math.Cos(latRad)) / Math.PI) / 2.0 * (1 << zoom));
+        return (double)((1.0 - Math.Log(Math.Tan(latRad) + 1.0 / Math.Cos(latRad)) / Math.PI) / 2.0 * (1 << zoom));
     }
 }

@@ -32,6 +32,7 @@ public class Gamemanager : MonoBehaviour
     public double triggerRadius = 10.0;
     public tileloader tileloader;
     public GameObject notificationBox;
+    public GameObject infoPanel;
     [HideInInspector] public List<LocationDetails> completedLocations = new();
     [HideInInspector] public List<LocationDetails> uncompletedLocations = new();
     bool startedMinigame = false;
@@ -94,9 +95,10 @@ public class Gamemanager : MonoBehaviour
         else
         {
             // Remove the notification box cause why is it there???
-            notificationBox.SetActive(false);
-            completedLocations[^1].infoCards.obtained = true;
-            startedMinigame = false;
+            //notificationBox.SetActive(false);
+            //completedLocations[^1].infoCards.obtained = true;
+            //startedMinigame = false;
+            CompleteMinigame();
         }
     }
 
@@ -104,9 +106,10 @@ public class Gamemanager : MonoBehaviour
     {
         notificationBox.SetActive(false);
         completedLocations[^1].infoCards.obtained = true;
+        if (infoPanel.transform.childCount > 0) GameObject.Destroy(infoPanel.transform.GetChild(0).gameObject);
+        GameObject.Instantiate(completedLocations[^1].infoCards.card, infoPanel.transform);
         startedMinigame = false;
         Debug.Log("Completed Minigame");
-        // Put the infocard in the info section
     }
 
     IEnumerator CheckDistance()
