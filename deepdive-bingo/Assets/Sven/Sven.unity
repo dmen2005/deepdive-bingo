@@ -483,8 +483,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileloader: {fileID: 706209711}
   update: 10
-  lattest: 53.2132367
-  longtest: 6.5558798
+  lattest: 53.211
+  longtest: 6.5642
 --- !u!114 &706209711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,66 +575,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locations:
   - name: Hoofdstation
-    latitude: 53.2132367
-    longitude: 6.5558798
+    latitude: 53.211
+    longitude: 6.5642
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions:
     - question: Dit is een test
       answer: 1968
     hints:
     - De volgende plek is de hub van alle bussen
   - name: Groninger Museum
-    latitude: 53.2132367
-    longitude: 6.5558798
+    latitude: 53.207167
+    longitude: 6.559331
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Akerk
-    latitude: 53.2140231
-    longitude: 6.5547766
+    latitude: 53.218167
+    longitude: 6.567664
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Het Kasteel
-    latitude: 53.2158162
-    longitude: 6.5483416
+    latitude: 53.218056
+    longitude: 6.552778
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Plantsoenvijver
-    latitude: 53.2228441
-    longitude: 6.553117
+    latitude: 53.225
+    longitude: 6.558333
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Nieuwe Kerk
-    latitude: 53.2234278
-    longitude: 6.5576763
+    latitude: 53.223333
+    longitude: 6.561667
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Monument Henri Daniel Guyot
-    latitude: 53.2217167
-    longitude: 6.5588424
+    latitude: 53.221506
+    longitude: 6.5617
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Rijksuniversiteit Groningen
-    latitude: 53.2190499
-    longitude: 6.5593777
+    latitude: 53.219444
+    longitude: 6.563333
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Martinitoren
-    latitude: 53.2190721
-    longitude: 6.5667135
+    latitude: 53.219211
+    longitude: 6.567999
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Prinsentuin
-    latitude: 53.2213524
-    longitude: 6.5663258
+    latitude: 53.221389
+    longitude: 6.569
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Forum Groningen
-    latitude: 53.2187636
-    longitude: 6.5692989
+    latitude: 53.22
+    longitude: 6.57
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
-  triggerRadius: 10
+  triggerRadius: 20
   tileloader: {fileID: 706209711}
-  notificationBox: {fileID: 0}
+  notificationBox: {fileID: 1057399911}
+  completedLocations: []
+  uncompletedLocations: []
 --- !u!1 &863529965
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +749,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1057399911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 895678240230121449, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
+  m_PrefabInstance: {fileID: 7810718036581855081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1057399912 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7503960813450088208, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
@@ -871,6 +911,26 @@ PrefabInstance:
     - target: {fileID: 895678240230121449, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180069308652424687, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321100729565469176, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321100729565469176, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321100729565469176, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321100729565469176, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3321100729565469176, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

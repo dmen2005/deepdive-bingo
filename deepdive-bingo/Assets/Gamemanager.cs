@@ -8,6 +8,7 @@ public class LocationDetails
     public string name;
     public double latitude;
     public double longitude;
+    public InfoCards infoCards;
     public List<LocationQuestions> questions;
     public List<string> hints;
 }
@@ -18,6 +19,13 @@ public class LocationQuestions
     public string question;
     public string answer;
 }
+
+[System.Serializable]
+public class InfoCards
+{
+    public GameObject card;
+    public bool obtained;
+}
 public class Gamemanager : MonoBehaviour
 {
     public List<LocationDetails> locations = new();
@@ -26,6 +34,7 @@ public class Gamemanager : MonoBehaviour
     public GameObject notificationBox;
     [HideInInspector] public List<LocationDetails> completedLocations = new();
     [HideInInspector] public List<LocationDetails> uncompletedLocations = new();
+    bool startedMinigame = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,7 +53,6 @@ public class Gamemanager : MonoBehaviour
     void CheckDistanceToPOI(double lat, double lon)
     {
         if (uncompletedLocations.Count <= 0) return;
-        Debug.Log(lat);
         LocationDetails currentLocation = uncompletedLocations[0];
         double distance = GeoUtils.GetDistanceMeters(lat, lon, currentLocation.latitude, currentLocation.longitude);
 
@@ -53,9 +61,11 @@ public class Gamemanager : MonoBehaviour
 
         if (distance < triggerRadius)
         {
+            if (completedLocations.Count > 0 && !completedLocations[^1].infoCards.obtained) return;
             // Trigger pop up
-            Debug.Log("You reached the location!");
             CompleteLocation();
+            notificationBox.SetActive(true);
+            Debug.Log("You reached the location!");
         }
     }
 
@@ -65,9 +75,6 @@ public class Gamemanager : MonoBehaviour
         uncompletedLocations.RemoveAt(0);
         if (uncompletedLocations.Count == 1)
         {
-            completedLocations.Add(uncompletedLocations[0]);
-            uncompletedLocations.RemoveAt(0);
-
             Debug.Log("Completed Bingo!");
         }
         else if (uncompletedLocations.Count == 0)
@@ -78,7 +85,28 @@ public class Gamemanager : MonoBehaviour
 
     public void StartMinigame()
     {
+        if (!completedLocations[^1].infoCards.obtained && !startedMinigame)
+        {
+            // Start the minigame
+            startedMinigame = true;
+            Debug.Log("Starting Minigame");
+        }
+        else
+        {
+            // Remove the notification box cause why is it there???
+            notificationBox.SetActive(false);
+            completedLocations[^1].infoCards.obtained = true;
+            startedMinigame = false;
+        }
+    }
 
+    public void CompleteMinigame()
+    {
+        notificationBox.SetActive(false);
+        completedLocations[^1].infoCards.obtained = true;
+        startedMinigame = false;
+        Debug.Log("Completed Minigame");
+        // Put the infocard in the info section
     }
 
     IEnumerator CheckDistance()
