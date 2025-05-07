@@ -47,7 +47,7 @@ public class gps : MonoBehaviour
             tileloader.longitude = longitude;
 
             tileloader.location();
-            Debug.LogError("Unable to get GPS data.");
+            Debug.LogWarning("Unable to get GPS data.");
         }
     }
 

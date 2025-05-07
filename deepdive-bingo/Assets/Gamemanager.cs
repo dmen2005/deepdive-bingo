@@ -24,8 +24,8 @@ public class Gamemanager : MonoBehaviour
     public double triggerRadius = 10.0;
     public tileloader tileloader;
     public GameObject notificationBox;
-    List<LocationDetails> completedLocations = new();
-    List<LocationDetails> uncompletedLocations = new();
+    [HideInInspector] public List<LocationDetails> completedLocations = new();
+    [HideInInspector] public List<LocationDetails> uncompletedLocations = new();
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,6 +61,8 @@ public class Gamemanager : MonoBehaviour
 
     void CompleteLocation()
     {
+        completedLocations.Add(uncompletedLocations[0]);
+        uncompletedLocations.RemoveAt(0);
         if (uncompletedLocations.Count == 1)
         {
             completedLocations.Add(uncompletedLocations[0]);
