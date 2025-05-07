@@ -13,8 +13,8 @@ public class tileloader : MonoBehaviour
 
     public void location()
     {
-        float x = (float)Math.Round(LonToTileX(longitude, zoom), 5);
-        float y = (float)Math.Round(LatToTileY(latitude, zoom), 5);
+        int x = (int)Math.Round(LonToTileX(longitude, zoom));
+        int y = (int)Math.Round(LatToTileY(latitude, zoom));
         Debug.Log(x); Debug.Log(y);
         // use in testing so not get bloked
         //  string url = $"https://a.tile.openstreetmap.fr/osmfr/{zoom}/{x}/{y}.png";
