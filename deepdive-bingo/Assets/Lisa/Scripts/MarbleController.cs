@@ -5,19 +5,22 @@ using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 
 public class MarbleController : MonoBehaviour
 {
-    public Gyroscope gyro = new Gyroscope();
+    private Vector3 rotation; 
 
     private void Awake()
     {
-        if (gyro != null)
-        {
-            InputSystem.EnableDevice(UnityEngine.InputSystem.Gyroscope.current);
-        }
+        Input.gyro.enabled = true;
+        rotation = Vector3.zero;
     }
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"{gyro.angularVelocity.ReadValue()} gyroscope value");
+        transform.rotation = GyroToUnity(Input.gyro.attitude);
+    }
+
+    private Quaternion GyroToUnity (Quaternion q)
+    {
+        return new Quaternion(q.x, q.y, -q.z, -q.w);
     }
 
     private void OnTriggerEnter(Collider other)
