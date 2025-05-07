@@ -10,7 +10,6 @@ public class gps : MonoBehaviour
     public float lattest = 53.2194f;
     public float longtest = 6.5665f;
 
-    //all the comments is for when gps is working to lazzy for cleaner solotion rn
 
     void Start()
     {
@@ -18,7 +17,6 @@ public class gps : MonoBehaviour
         if (!Input.location.isEnabledByUser)
         {
             Debug.LogError("Location services are not enabled on this device.");
-            return;
         }
 
         Input.location.Start();
@@ -31,8 +29,7 @@ public class gps : MonoBehaviour
     {
         if (Input.location.status == LocationServiceStatus.Running)
         {
-            //float latitude = lattest;
-            //float longitude = longtest;
+
 
             float latitude = Input.location.lastData.latitude;
             float longitude = Input.location.lastData.longitude;
@@ -46,6 +43,13 @@ public class gps : MonoBehaviour
         }
         else
         {
+            float latitude = lattest;
+            float longitude = longtest;
+
+            tileloader.latitude = latitude;
+            tileloader.longitude = longitude;
+
+            tileloader.location();
             Debug.LogError("Unable to get GPS data.");
         }
     }
