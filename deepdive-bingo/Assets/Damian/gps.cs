@@ -14,13 +14,27 @@ public class gps : MonoBehaviour
 
     void Awake()
     {
-        if (Input.location.isEnabledByUser)
-        {
-            //Debug.LogError("Location services are not enabled on this device.");
-            Input.location.Start();
-        }
-
         InvokeRepeating("UpdateGPS", 0f, update);
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    IEnumerator StartLocationService()
+    {
+        while (true)
+        {
+            if (Input.location.isEnabledByUser && Input.location.status != LocationServiceStatus.Running)
+            {
+                //Debug.LogError("Location services are not enabled on this device.");
+                Input.location.Start();
+                yield break;
+            }
+            yield return new WaitForSeconds(5);
+        }
+        
     }
 
     void UpdateGPS()
@@ -30,8 +44,7 @@ public class gps : MonoBehaviour
         {
             double latitude = Input.location.lastData.latitude;
             double longitude = Input.location.lastData.longitude;
-
-
+            Debug.Log(Input.location.lastData);
 
             tileloader.latitude = latitude;
             tileloader.longitude = longitude;

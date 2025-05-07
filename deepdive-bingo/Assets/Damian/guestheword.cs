@@ -19,14 +19,14 @@ public class guestheword : MonoBehaviour
         guestheword2.SetActive(true);
     }
 
-    public void uguesed()
-    {
-        string correctAnswer = noorderpoort
-        string userAnswer = playerInput.text.Trim().ToLower();
+    //public void uguesed()
+    //{
+    //    string correctAnswer = "noorderoort";
+    //    string userAnswer = playerInput.Text.Trim().ToLower();
 
-        if (userAnswer == noorderpoort) ;
-        {
-            guestheword2.SetActive (false);
-        }
-    }
+    //    if (userAnswer == noorderpoort) ;
+    //    {
+    //        guestheword2.SetActive (false);
+    //    }
+    //}
 }

@@ -17,7 +17,7 @@ public class LocationDetails
 public class LocationQuestions
 {
     public string question;
-    public string answer;
+    public List<string> answer;
 }
 
 [System.Serializable]
@@ -28,10 +28,12 @@ public class InfoCards
 }
 public class Gamemanager : MonoBehaviour
 {
+    public List<GameObject> minigames = new();
     public List<LocationDetails> locations = new();
     public double triggerRadius = 10.0;
     public tileloader tileloader;
     public GameObject notificationBox;
+    public GameObject UICanvas;
     public GameObject infoPanel;
     public hints hintScript;
     [HideInInspector] public List<LocationDetails> completedLocations = new();
@@ -63,18 +65,18 @@ public class Gamemanager : MonoBehaviour
 
         if (distance < triggerRadius)
         {
-            if (completedLocations.Count > 0 && !completedLocations[^1].infoCards.obtained) return;
             // Trigger pop up
             CompleteLocation();
-            notificationBox.SetActive(true);
-            Debug.Log("You reached the location!");
         }
     }
 
-    void CompleteLocation()
+    public void CompleteLocation()
     {
+        if (completedLocations.Count > 0 && !completedLocations[^1].infoCards.obtained) return;
         completedLocations.Add(uncompletedLocations[0]);
         uncompletedLocations.RemoveAt(0);
+        notificationBox.SetActive(true);
+        Debug.Log("You reached the location!");
         if (uncompletedLocations.Count == 1)
         {
             Debug.Log("Completed Bingo!");
@@ -90,8 +92,9 @@ public class Gamemanager : MonoBehaviour
         if (!completedLocations[^1].infoCards.obtained && !startedMinigame)
         {
             // Start the minigame
-            startedMinigame = true;
             Debug.Log("Starting Minigame");
+            startedMinigame = true;
+            GameObject.Instantiate(minigames[Random.Range(0, minigames.Count)], UICanvas.GetComponent<RectTransform>());
         }
         else
         {
@@ -122,8 +125,6 @@ public class Gamemanager : MonoBehaviour
         {
             double newLat = tileloader.latitude;
             double newLon = tileloader.longitude;
-            Debug.Log(newLat);
-            Debug.Log(uncompletedLocations[0].latitude);
             CheckDistanceToPOI(newLat, newLon);
             yield return new WaitForSeconds(5);
         }
