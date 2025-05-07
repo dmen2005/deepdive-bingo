@@ -28,10 +28,6 @@ public class hints : MonoBehaviour
         {
             questionText.text = location.questions[currentQuestionIndex].question;
         }
-
-        hint1.text = location.hints.Count > 0 ? location.hints[0] : "";
-        hint2.text = location.hints.Count > 1 ? location.hints[1] : "";
-        hint3.text = location.hints.Count > 2 ? location.hints[2] : "";
     }
 
     private void Update()
