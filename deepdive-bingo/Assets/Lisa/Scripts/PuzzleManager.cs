@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using static Unity.VisualScripting.Metadata;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -29,12 +27,12 @@ public class PuzzleManager : MonoBehaviour
             int randomIndex = Random.Range(i, puzzlePieces.Count);
             (puzzlePieces[i], puzzlePieces[randomIndex]) = (puzzlePieces[randomIndex], puzzlePieces[i]);
         }
-
+        
         for (int i = 0; i < puzzlePieces.Count; i++)
         {
             puzzlePieces[i].SetSiblingIndex(i);
+            // Re-index the pieces.
+            puzzlePieces[i].GetComponent<PuzzlePiece>().SetIndex(puzzlePieces[i].GetSiblingIndex());
         }
-
-
     }
 }
