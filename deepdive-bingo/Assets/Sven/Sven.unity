@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileRenderer: {fileID: 122189726}
-  zoom: 17
+  zoom: 19
   latitude: 53.2194
   longitude: 6.5665
 --- !u!4 &706209712
