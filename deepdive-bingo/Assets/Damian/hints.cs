@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 
 public class hints : MonoBehaviour
@@ -13,6 +14,8 @@ public class hints : MonoBehaviour
     public TMP_InputField playerInput;
 
     private int currentQuestionIndex = 0;
+
+    public int hintcount = 0;
 
 
     void Start()
@@ -31,13 +34,23 @@ public class hints : MonoBehaviour
         hint3.text = location.hints.Count > 2 ? location.hints[2] : "";
     }
 
+    private void Update()
+    {
 
+    }
+
+    public void nextlocation()
+    {
+        hintcount = 0;
+        playerInput.GetComponent<TMPro.TMP_InputField>().interactable = true;
+        hint1.text = "---------------------";
+        hint2.text = "---------------------";
+        hint3.text = "---------------------";
+    }
 
     public void CheckAnswer()
     {
-        Debug.Log("damiantest");
         if (gameManager.completedLocations.Count == 0) return;
-        Debug.Log("damiantest2");
 
         var location = gameManager.completedLocations[^1];
         var question = location.questions[currentQuestionIndex];
@@ -47,13 +60,21 @@ public class hints : MonoBehaviour
 
         if (userAnswer == correctAnswer)
         {
-            Debug.Log("Correct!");
+            location.questions.RemoveAt(0);
 
-            currentQuestionIndex++;
-
-            if (currentQuestionIndex >= location.questions.Count)
+            if (location.hints.Count > 0)
             {
-                Debug.Log("Finished all questions for this location.");
+                hintcount += 1;
+                hint1.text = location.hints.Count > 0 ? location.hints[0] : "";
+                if (hintcount == 2) { hint2.text = location.hints.Count > 1 ? location.hints[1] : ""; }
+                if (hintcount == 3) { hint3.text = location.hints.Count > 2 ? location.hints[2] : ""; }
+            }
+
+            if (location.questions.Count == 0)
+            {
+
+                playerInput.GetComponent<TMPro.TMP_InputField>().interactable = false;
+                //done
             }
             else
             {
@@ -62,7 +83,7 @@ public class hints : MonoBehaviour
         }
         else
         {
-            Debug.Log("Incorrect.");
+            //wrong
         }
     }
 }

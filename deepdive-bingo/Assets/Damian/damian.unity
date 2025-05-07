@@ -342,8 +342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileloader: {fileID: 141074712}
   update: 10
-  lattest: 53.219398498535156
-  longtest: 6.566500186920166
+  lattest: 53.2132367
+  longtest: 6.5558798
 --- !u!1 &270184633
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +378,9 @@ MonoBehaviour:
   - name: Hoofdstation
     latitude: 53.2132367
     longitude: 6.5558798
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions:
     - question: 1
       answer: 1
@@ -392,6 +395,9 @@ MonoBehaviour:
   - name: Groninger Museum
     latitude: 53.2132367
     longitude: 6.5558798
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions:
     - question: 11
       answer: 11
@@ -406,46 +412,73 @@ MonoBehaviour:
   - name: Akerk
     latitude: 53.2140231
     longitude: 6.5547766
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Het Kasteel
     latitude: 53.2158162
     longitude: 6.5483416
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Plantsoenvijver
     latitude: 53.2228441
     longitude: 6.553117
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Nieuwe Kerk
     latitude: 53.2234278
     longitude: 6.5576763
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Monument Henri Daniel Guyot
     latitude: 53.2217167
     longitude: 6.5588424
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Rijksuniversiteit Groningen
     latitude: 53.2190499
     longitude: 6.5593777
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Martinitoren
     latitude: 53.2190721
     longitude: 6.5667135
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Prinsentuin
     latitude: 53.2213524
     longitude: 6.5663258
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   - name: Forum Groningen
     latitude: 53.2187636
     longitude: 6.5692989
+    infoCards:
+      card: {fileID: 0}
+      obtained: 0
     questions: []
     hints: []
   triggerRadius: 10
@@ -2627,7 +2660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: vraag
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3002,7 +3035,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745812811}
         m_TargetAssemblyTypeName: hints, Assembly-CSharp
-        m_MethodName: CheckAnswere
+        m_MethodName: CheckAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
