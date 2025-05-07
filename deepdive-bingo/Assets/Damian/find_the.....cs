@@ -12,11 +12,11 @@ public class find_the: MonoBehaviour
     public void found()
     {
         objfound++;
+        findthemistake.SetActive(false);
 
         if (objfound == 3)
         {
             objfound = 0;
-            findthemistake.SetActive(false);
         }
     }
 }
