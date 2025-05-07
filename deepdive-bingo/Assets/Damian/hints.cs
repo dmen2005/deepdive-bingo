@@ -15,23 +15,27 @@ public class hints : MonoBehaviour
 
     private int currentQuestionIndex = 0;
 
-    public int hintcount = 0;
+    [HideInInspector] public int hintcount = 0;
 
 
-    void Start()
+    public void UpdateHints()
     {
         if (gameManager.completedLocations.Count == 0) return;
 
-        var location = gameManager.completedLocations[0];
+        var location = gameManager.completedLocations[^1];
 
         if (location.questions.Count > 0)
         {
             questionText.text = location.questions[currentQuestionIndex].question;
         }
 
-        hint1.text = location.hints.Count > 0 ? location.hints[0] : "";
-        hint2.text = location.hints.Count > 1 ? location.hints[1] : "";
-        hint3.text = location.hints.Count > 2 ? location.hints[2] : "";
+        hint1.text = hintcount > 0 ? location.hints[0] : "";
+        hint2.text = hintcount > 1 ? location.hints[1] : "";
+        hint3.text = hintcount > 2 ? location.hints[2] : "";
+    }
+    void Start()
+    {
+        
     }
 
     private void Update()
@@ -42,7 +46,7 @@ public class hints : MonoBehaviour
     public void nextlocation()
     {
         hintcount = 0;
-        playerInput.GetComponent<TMPro.TMP_InputField>().interactable = true;
+        playerInput.interactable = true;
         hint1.text = "---------------------";
         hint2.text = "---------------------";
         hint3.text = "---------------------";
@@ -53,6 +57,7 @@ public class hints : MonoBehaviour
         if (gameManager.completedLocations.Count == 0) return;
 
         var location = gameManager.completedLocations[^1];
+        var hintsLoc = gameManager.uncompletedLocations[0];
         var question = location.questions[currentQuestionIndex];
 
         string correctAnswer = question.answer.Trim().ToLower();
@@ -65,15 +70,15 @@ public class hints : MonoBehaviour
             if (location.hints.Count > 0)
             {
                 hintcount += 1;
-                hint1.text = location.hints.Count > 0 ? location.hints[0] : "";
-                if (hintcount == 2) { hint2.text = location.hints.Count > 1 ? location.hints[1] : ""; }
-                if (hintcount == 3) { hint3.text = location.hints.Count > 2 ? location.hints[2] : ""; }
+                hint1.text = hintsLoc.hints.Count > 0 ? hintsLoc.hints[0] : "";
+                if (hintcount == 2) { hint2.text = hintsLoc.hints.Count > 1 ? hintsLoc.hints[1] : ""; }
+                if (hintcount == 3) { hint3.text = hintsLoc.hints.Count > 2 ? hintsLoc.hints[2] : ""; }
             }
 
             if (location.questions.Count == 0)
             {
 
-                playerInput.GetComponent<TMPro.TMP_InputField>().interactable = false;
+                playerInput.interactable = false;
                 //done
             }
             else

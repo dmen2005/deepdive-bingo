@@ -33,6 +33,7 @@ public class Gamemanager : MonoBehaviour
     public tileloader tileloader;
     public GameObject notificationBox;
     public GameObject infoPanel;
+    public hints hintScript;
     [HideInInspector] public List<LocationDetails> completedLocations = new();
     [HideInInspector] public List<LocationDetails> uncompletedLocations = new();
     bool startedMinigame = false;
@@ -109,6 +110,8 @@ public class Gamemanager : MonoBehaviour
         if (infoPanel.transform.childCount > 0) GameObject.Destroy(infoPanel.transform.GetChild(0).gameObject);
         GameObject.Instantiate(completedLocations[^1].infoCards.card, infoPanel.transform);
         startedMinigame = false;
+        hintScript.nextlocation();
+        hintScript.UpdateHints();
         Debug.Log("Completed Minigame");
     }
 
