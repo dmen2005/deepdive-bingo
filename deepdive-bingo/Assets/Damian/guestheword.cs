@@ -1,15 +1,15 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem;
 
 public class guestheword : MonoBehaviour
 {
     public GameObject guestheword2;
+    Gamemanager gamemanager;
     public TMP_InputField playerInput;
 
     void Start()
     {
-
+        gamemanager = GameObject.Find("GameManager").GetComponent<Gamemanager>();
     }
 
     void Update()
@@ -30,7 +30,8 @@ public class guestheword : MonoBehaviour
         if (userAnswer == correctAnswer)
         {
             //correct
-            guestheword2.SetActive(false);
+            gamemanager.CompleteMinigame();
+            GameObject.Destroy(guestheword2);
         }
         else
         {
