@@ -246,192 +246,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109788503}
   m_CullTransparentMesh: 1
---- !u!1 &134208690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 134208694}
-  - component: {fileID: 134208693}
-  - component: {fileID: 134208692}
-  - component: {fileID: 134208691}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &134208691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134208690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab3192e5e2ca33c4d8ff4b1ef04dfa53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 134208692}
-  questionText: {fileID: 224040350}
-  hint1: {fileID: 642909456}
-  hint2: {fileID: 814797516}
-  hint3: {fileID: 701196914}
-  playerInput: {fileID: 462818077}
-  hintcount: 0
---- !u!114 &134208692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134208690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13083f33dabe2a949b06213efddd47d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations:
-  - name: Hoofdstation
-    latitude: 53.211
-    longitude: 6.5642
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: fb4200cc940319841be241822c406139, type: 3}
-      obtained: 0
-    questions:
-    - question: Dit is een test
-      answer: 1968
-    - question: e
-      answer: e
-    - question: e
-      answer: e
-    hints:
-    - De volgende plek is de hub van alle bussen
-  - name: Groninger Museum
-    latitude: 53.212334
-    longitude: 6.566159
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: 18340f181a1409f40831b29e7f363b35, type: 3}
-      obtained: 0
-    questions:
-    - question: e
-      answer: ee
-    hints:
-    - eeee
-    - eeee
-    - Museum
-  - name: Akerk
-    latitude: 53.218167
-    longitude: 6.567664
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: aee955e78cd797843b77e56af695256e, type: 3}
-      obtained: 0
-    questions: []
-    hints: []
-  - name: Het Kasteel
-    latitude: 53.218056
-    longitude: 6.552778
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: 119f5120ddd059b4cbafcde052e019fd, type: 3}
-      obtained: 0
-    questions: []
-    hints: []
-  - name: Plantsoenvijver
-    latitude: 53.225
-    longitude: 6.558333
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: 2932d1f2c8368fa48803b323da9fb6ca, type: 3}
-      obtained: 0
-    questions: []
-    hints: []
-  - name: Nieuwe Kerk
-    latitude: 53.223333
-    longitude: 6.561667
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: 34280326a3a1a0947a574e14d6cfd670, type: 3}
-      obtained: 0
-    questions: []
-    hints: []
-  - name: Monument Henri Daniel Guyot
-    latitude: 53.221506
-    longitude: 6.5617
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: d173293d6e38e5a42abbb7b59ecb7f07, type: 3}
-      obtained: 0
-    questions: []
-    hints: []
-  - name: Rijksuniversiteit Groningen
-    latitude: 53.219444
-    longitude: 6.563333
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: 68718535a8f9fe54e9d1665095b5007d, type: 3}
-      obtained: 0
-    questions: []
-    hints: []
-  - name: Martinitoren
-    latitude: 53.219211
-    longitude: 6.567999
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: a24cf925db132ad4fae7199c3a47ec97, type: 3}
-      obtained: 0
-    questions: []
-    hints:
-    - Dit gebouw is het hoogste gebouw in Groningen.
-  - name: Prinsentuin
-    latitude: 53.221389
-    longitude: 6.569
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: dfec2f2abe8657c40be56f51cbbad472, type: 3}
-      obtained: 0
-    questions: []
-    hints: []
-  - name: Forum Groningen
-    latitude: 53.22
-    longitude: 6.57
-    infoCards:
-      card: {fileID: 5433290689542533857, guid: 96e19ae33b400dc49a13768ab30c0dd8, type: 3}
-      obtained: 0
-    questions: []
-    hints: []
-  triggerRadius: 20
-  tileloader: {fileID: 444569200}
-  notificationBox: {fileID: 1047636129}
-  infoPanel: {fileID: 1533304932}
-  hintScript: {fileID: 134208691}
-  completedLocations: []
-  uncompletedLocations: []
---- !u!114 &134208693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134208690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 235bca24cfa04574cba6104e181609bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &134208694
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134208690}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.627613, y: -1.636467, z: 1.3429956}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &224040349
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +705,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 134208691}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: hints, Assembly-CSharp
         m_MethodName: CheckAnswer
         m_Mode: 1
@@ -2638,7 +2452,7 @@ PrefabInstance:
     - target: {fileID: 3321100729565469176, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 134208692}
+      objectReference: {fileID: 0}
     - target: {fileID: 7503960813450088208, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2724,11 +2538,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
---- !u!1 &1047636129 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 895678240230121449, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
-  m_PrefabInstance: {fileID: 1047636128}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1047636130 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7503960813450088208, guid: 3ac63bc319a0e2745a413d02775fb761, type: 3}
@@ -3863,6 +3672,337 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2081954506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2081954510}
+  - component: {fileID: 2081954509}
+  - component: {fileID: 2081954508}
+  - component: {fileID: 2081954507}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2081954507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081954506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab3192e5e2ca33c4d8ff4b1ef04dfa53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2081954508}
+  completionPanel: {fileID: 0}
+  questionText: {fileID: 0}
+  hint1: {fileID: 0}
+  hint2: {fileID: 0}
+  hint3: {fileID: 0}
+  playerInput: {fileID: 0}
+  hintcount: 0
+--- !u!114 &2081954508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081954506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13083f33dabe2a949b06213efddd47d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigames:
+  - {fileID: 4622866686011842577, guid: d5d1ed0794da54d49987c00b73ca49b8, type: 3}
+  locations:
+  - name: Hoofdstation
+    latitude: 53.211
+    longitude: 6.5642
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: fb4200cc940319841be241822c406139, type: 3}
+      obtained: 0
+    questions:
+    - question: Wanneer werd het Hoofdstation van Groningen gebouwd?
+      answer:
+      - 1896
+    - question: Welke bouwstijlen zijn terug te zien in het station?
+      answer:
+      - Neogo
+      - Jugendstil
+    - question: Waarom is het station zo belangrijk voor Noord-Nederland?
+      answer:
+      - bus
+      - trein
+      - fiets
+    hints: []
+  - name: Groninger Museum
+    latitude: 53.212334
+    longitude: 6.566159
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: 18340f181a1409f40831b29e7f363b35, type: 3}
+      obtained: 0
+    questions:
+    - question: ' Wat valt direct op aan het gebouw van het Groninger Museum?'
+      answer:
+      - Modern
+      - Kleurrijk
+    - question: Welke soorten kunst zijn er in het museum te vinden?
+      answer:
+      - Modern
+      - hedendaags
+    - question: 'Wanneer opende het museum zijn deuren? '
+      answer:
+      - 1994
+    hints:
+    - Je volgende stop is kleurrijk en ligt aan het water.
+    - In dit gebouw vind je moderne kunst, vlakbij het station.
+    - Groninger Museum
+  - name: Akerk
+    latitude: 53.218167
+    longitude: 6.567664
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: aee955e78cd797843b77e56af695256e, type: 3}
+      obtained: 0
+    questions:
+    - question: In welke stijl is de Akerk gebouwd?
+      answer:
+      - gotisch
+    - question: Waarvoor wordt de Akerk tegenwoordig gebruikt?
+      answer:
+      - evenementen
+      - tentoonstellingen
+    - question: Wat is opvallend aan de toren van de Akerk?
+      answer:
+      - los
+      - kerk
+    hints:
+    - De volgende locatie heeft een losstaande toren.
+    - Je gaat naar een kerk met een indrukwekkend orgel uit de 17e eeuw.
+    - Akerk
+  - name: Het Kasteel
+    latitude: 53.218056
+    longitude: 6.552778
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: 119f5120ddd059b4cbafcde052e019fd, type: 3}
+      obtained: 0
+    questions:
+    - question: Wat was de oorspronkelijke functie van Het Kasteel?
+      answer:
+      - militair
+      - ziekenhuis
+    - question: Wat is tegenwoordig de functie van Het Kasteel?
+      answer:
+      - startups
+      - ondernemers
+    - question: Wat symboliseert het gebouw?
+      answer:
+      - erfgoed
+      - vooruitgang
+      - verbinding
+    hints:
+    - De volgende plek was ooit een militair ziekenhuis.
+    - Een plek waar startups en jonge ondernemers samenkomen.
+    - Het Kasteel
+  - name: Plantsoenvijver
+    latitude: 53.225
+    longitude: 6.558333
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: 2932d1f2c8368fa48803b323da9fb6ca, type: 3}
+      obtained: 0
+    questions:
+    - question: Waar ligt de Plantsoenvijver?
+      answer:
+      - noorderplantsoen
+    - question: ' Wat is een jaarlijks terugkerend evenement bij de vijver?'
+      answer:
+      - noorderzon
+    - question: Wie komen hier graag ontspannen?
+      answer:
+      - studenten
+      - buurtbewoners
+    hints:
+    - De volgende plek ligt in een stadspark op oude wallen.
+    - Je vindt er rust en eenden.
+    - Plantsoenvijver
+  - name: Nieuwe Kerk
+    latitude: 53.223333
+    longitude: 6.561667
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: 34280326a3a1a0947a574e14d6cfd670, type: 3}
+      obtained: 0
+    questions:
+    - question: Waar staat de Nieuwe Kerk?
+      answer:
+      - nieuwe kerkhof
+    - question: In welk jaar werd de Nieuwe Kerk gebouwd?
+      answer:
+      - 1660
+    - question: Waarvoor wordt de kerk tegenwoordig gebruikt?
+      answer:
+      - concerten
+      - ceremonies
+    hints:
+    - Je gaat naar een kerk in een rustig hofje met klassieke bouwstijl.
+    - De volgende locatie werd gebouwd in 1660.
+    - Nieuwe Kerk
+  - name: Monument Henri Daniel Guyot
+    latitude: 53.221506
+    longitude: 6.5617
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: d173293d6e38e5a42abbb7b59ecb7f07, type: 3}
+      obtained: 0
+    questions:
+    - question: Voor wie is dit monument opgericht?
+      answer:
+      - Henri Daniel Guyot
+    - question: Waar staat het monument?
+      answer:
+      - oostersingel
+    - question: Wat symboliseert het monument?
+      answer:
+      - inclusief onderwijs
+    hints:
+    - Een klein gedenkteken met grote betekenis.
+    - Je volgende stop is een monument voor iemand die zich inzette voor dovenonderwijs.
+    - Monument Henri Daniel Guyot
+  - name: Rijksuniversiteit Groningen
+    latitude: 53.219444
+    longitude: 6.563333
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: 68718535a8f9fe54e9d1665095b5007d, type: 3}
+      obtained: 0
+    questions:
+    - question: Wanneer werd de RUG opgericht?
+      answer:
+      - 1614
+    - question: Wat is opvallend aan het hoofdgebouw van de RUG?
+      answer:
+      - neorenaissancestijl
+    - question: Wat maakt de universiteit aantrekkelijk voor studenten?
+      answer:
+      - onderzoek
+      - vrijheid in studiekeuze
+      - "internationale ori\xEBntatie"
+    hints:
+    - De volgende locatie is een van de oudste universiteiten van Nederland.
+    - Je gaat naar een plek waar studenten en onderzoekers samenkomen.
+    - Rijksuniversiteit Groningen
+  - name: Martinitoren
+    latitude: 53.219211
+    longitude: 6.567999
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: a24cf925db132ad4fae7199c3a47ec97, type: 3}
+      obtained: 0
+    questions:
+    - question: Hoe hoog is de Martinitoren?
+      answer:
+      - 97
+    - question: Wat is de bijnaam van de toren?
+      answer:
+      - grieze
+      - olle
+    - question: Waarom is de Martinitoren belangrijk?
+      answer:
+      - symbool
+      - groningen
+    hints:
+    - Je volgende locatie torent hoog boven alles uit.
+    - "Je bezoekt straks 'd\u2019Olle Grieze'."
+    - Martinitoren
+  - name: Prinsentuin
+    latitude: 53.221389
+    longitude: 6.569
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: dfec2f2abe8657c40be56f51cbbad472, type: 3}
+      obtained: 0
+    questions:
+    - question: Wat voor tuin is de Prinsentuin?
+      answer:
+      - renaissancetuin
+    - question: Wat vind je allemaal in de Prinsentuin?
+      answer:
+      - rozentuin
+      - kruidentuin
+      - zonnewijzer
+      - theehuis
+    - question: Wat is de historische achtergrond van de tuin?
+      answer:
+      - prinsenhof
+    hints:
+    - Je komt straks in een tuin uit 1626 met een theehuis.
+    - Je ziet er rozen, kruiden en zonnewijzers.
+    - Prinsentuin
+  - name: Forum Groningen
+    latitude: 53.22
+    longitude: 6.57
+    infoCards:
+      card: {fileID: 5433290689542533857, guid: 96e19ae33b400dc49a13768ab30c0dd8, type: 3}
+      obtained: 0
+    questions:
+    - question: Wanneer is het Forum geopend?
+      answer:
+      - 2019
+    - question: Wat is het Forum Groningen?
+      answer:
+      - midden
+      - stad
+      - modern
+    - question: Wat kan je in het Forum vinden?
+      answer:
+      - bibliotheek
+      - film
+      - tentoonstel
+      - caf
+    hints:
+    - De volgende plek is het modernste gebouw van de stad.
+    - Je eindigt met uitzicht over heel Groningen.
+    - Forum Groningen
+  triggerRadius: 20
+  tileloader: {fileID: 0}
+  notificationBox: {fileID: 0}
+  UICanvas: {fileID: 0}
+  infoPanel: {fileID: 0}
+  hintScript: {fileID: 2081954507}
+  completedLocations: []
+  uncompletedLocations: []
+--- !u!114 &2081954509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081954506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235bca24cfa04574cba6104e181609bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2081954510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081954506}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.627613, y: -1.636467, z: 1.3429956}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2089842059
 GameObject:
   m_ObjectHideFlags: 0
@@ -4008,9 +4148,9 @@ SceneRoots:
   - {fileID: 847857462}
   - {fileID: 1667333407}
   - {fileID: 1035338679}
-  - {fileID: 134208694}
   - {fileID: 444569202}
   - {fileID: 1908215792}
   - {fileID: 834170039}
   - {fileID: 819278422}
   - {fileID: 1518553311}
+  - {fileID: 2081954510}
