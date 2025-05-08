@@ -1,0 +1,10 @@
+# ninja log v5
+40	2037	7683269813986713	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	c47fd84f252884c9
+49	2066	7683269814501490	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	ec8733329ac4a99a
+0	2073	7683269814380555	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	e30a345f0a1baad
+31	2087	7683269814946182	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	be29975b48f04bd
+66	2094	7683269814838135	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	5451cdf78d5a36f4
+17	2143	7683269815900794	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3ef8a941be6cb69
+24	2194	7683269816488630	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	a50a198ea3bcecaa
+10	2248	7683269817041373	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a03d56034168fcb4
+2249	2417	7683269819015369	C:/Users/Lisa/Desktop/deepdive-bingo/deepdive-bingo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/4w6h2b1m/obj/arm64-v8a/libgame.so	79dfc0c61bf6c8ef
