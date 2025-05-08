@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using UnityEngine.UI;
 
 public class guestheword : MonoBehaviour
 {
@@ -32,10 +34,20 @@ public class guestheword : MonoBehaviour
             //correct
             gamemanager.CompleteMinigame();
             GameObject.Destroy(guestheword2);
+            playerInput.GetComponent<Image>().color = Color.green;
+            StartCoroutine(white());
         }
         else
         {
-            Debug.Log("wrong");
+            playerInput.GetComponent<Image>().color = Color.red;
+            StartCoroutine(white());
+            //wrong
+        }
+
+        IEnumerator white()
+        {
+            yield return new WaitForSeconds(1);
+            playerInput.GetComponent<Image>().color = Color.white;
         }
     }
 }
