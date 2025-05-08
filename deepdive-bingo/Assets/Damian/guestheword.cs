@@ -1,19 +1,22 @@
 using UnityEngine;
+using TMPro;
 using UnityEngine.InputSystem;
 
 public class guestheword : MonoBehaviour
 {
     public GameObject guestheword2;
-    public GameObject playerInput;
+    public TMP_InputField playerInput;
+
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
+
     public void gues()
     {
         guestheword2.SetActive(true);
@@ -21,12 +24,17 @@ public class guestheword : MonoBehaviour
 
     public void uguesed()
     {
-        string correctAnswer = noorderpoort
+        string correctAnswer = "noorderpoort";
         string userAnswer = playerInput.text.Trim().ToLower();
 
-        if (userAnswer == noorderpoort) ;
+        if (userAnswer == correctAnswer)
         {
-            guestheword2.SetActive (false);
+            //correct
+            guestheword2.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("wrong");
         }
     }
 }
