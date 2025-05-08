@@ -14,6 +14,7 @@ public class gps : MonoBehaviour
 
     void Awake()
     {
+        StartCoroutine(StartLocationService());
         InvokeRepeating("UpdateGPS", 0f, update);
     }
 
