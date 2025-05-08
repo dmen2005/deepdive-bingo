@@ -12,7 +12,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerClickHandler, IBeginDragHandle
     private Canvas canvas;
     private CanvasGroup canvasGroup;
 
-    private bool isLocked = false;
+    public bool isLocked = false;
 
     private void Awake()
     {
@@ -105,6 +105,24 @@ public class PuzzlePiece : MonoBehaviour, IPointerClickHandler, IBeginDragHandle
 
             // Optional: change color or show visual lock
             Debug.Log($"{name} locked in correct position!");
+
+
+            bool check = true;
+            foreach (Transform child in transform.parent)
+            {
+                GameObject childObj = child.gameObject;
+
+                if (!childObj.GetComponent<PuzzlePiece>().isLocked)
+                {
+                    check = false;
+                    break;
+                }
+            }
+            if (check)
+            {
+                GameObject.Find("GameManager").GetComponent<Gamemanager>().CompleteMinigame();
+                GameObject.Destroy(transform.parent.gameObject);
+            }
         }
     }
 }

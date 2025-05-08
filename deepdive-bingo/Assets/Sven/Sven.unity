@@ -2050,7 +2050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &505432759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2686,11 +2686,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigames:
-  - {fileID: 3980855130355872325, guid: 2330414d88252b34a990e9ac80579554, type: 3}
+  - {fileID: 3698912008025657472, guid: ccb43960ca4f2614aadeb04f3c89fa08, type: 3}
   - {fileID: 4622866686011842577, guid: d5d1ed0794da54d49987c00b73ca49b8, type: 3}
+  - {fileID: 3980855130355872325, guid: 2330414d88252b34a990e9ac80579554, type: 3}
   locations:
   - name: Hoofdstation
-    latitude: 53.211
+    latitude: 53.211303
     longitude: 6.5642
     infoCards:
       card: {fileID: 5433290689542533857, guid: fb4200cc940319841be241822c406139, type: 3}
@@ -2710,8 +2711,8 @@ MonoBehaviour:
       - fiets
     hints: []
   - name: Groninger Museum
-    latitude: 53.212334
-    longitude: 6.566159
+    latitude: 53.212272
+    longitude: 6.565777
     infoCards:
       card: {fileID: 5433290689542533857, guid: 18340f181a1409f40831b29e7f363b35, type: 3}
       obtained: 0
