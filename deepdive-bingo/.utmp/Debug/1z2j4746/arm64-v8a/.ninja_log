@@ -1,10 +1,19 @@
 # ninja log v5
+43	731	7682371370363939	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2afc4afd47828bd
 9	715	7682371370188502	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c9da3e6ec11d7d61
+5	808	7682371370822906	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c0e3f336712b847b
 35	718	7682371370163327	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	de6c012c6a9b371d
 14	719	7682371370103059	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	a4b0b7ed69ee59a0
-43	731	7682371370363939	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2afc4afd47828bd
-5	808	7682371370822906	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c0e3f336712b847b
 19	809	7682371370735339	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	89e86febcb6f9542
 26	824	7682371371359819	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	40d3de8206d8502d
 0	896	7682371371628705	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	2a315c70c171ddd4
 897	1032	7682371373642880	C:/Users/svenr/OneDrive - Noorderpoort/Documenten/GitHub/deepdive-bingo/deepdive-bingo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/1z2j4746/obj/arm64-v8a/libgame.so	24b674be16095451
+10	1197	7684044510926458	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c9da3e6ec11d7d61
+29	1199	7684044510847682	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	a4b0b7ed69ee59a0
+46	1221	7684044511128619	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2afc4afd47828bd
+40	1223	7684044511068106	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	de6c012c6a9b371d
+24	1295	7684044511676870	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c0e3f336712b847b
+19	1303	7684044512042331	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	89e86febcb6f9542
+34	1363	7684044512267050	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	40d3de8206d8502d
+5	1411	7684044512880296	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	2a315c70c171ddd4
+1411	1783	7684044517077164	C:/Users/svenr/OneDrive - Noorderpoort/Documenten/GitHub/deepdive-bingo/deepdive-bingo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/1z2j4746/obj/arm64-v8a/libgame.so	24b674be16095451
