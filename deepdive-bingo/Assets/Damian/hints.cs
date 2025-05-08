@@ -153,6 +153,5 @@ public class hints : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         playerInput.GetComponent<Image>().color = Color.white;
-
     }
 }

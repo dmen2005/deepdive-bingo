@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using System.Collections;
 
 public class guestheword : MonoBehaviour
 {
@@ -31,10 +33,20 @@ public class guestheword : MonoBehaviour
         {
             //correct
             guestheword2.SetActive(false);
+            playerInput.GetComponent<Image>().color = Color.green;
+            StartCoroutine(white());
         }
         else
         {
-            Debug.Log("wrong");
+            playerInput.GetComponent<Image>().color = Color.red;
+            StartCoroutine(white());
+            //wrong
         }
+    }
+
+    IEnumerator white()
+    {
+        yield return new WaitForSeconds(1);
+        playerInput.GetComponent<Image>().color = Color.white;
     }
 }
