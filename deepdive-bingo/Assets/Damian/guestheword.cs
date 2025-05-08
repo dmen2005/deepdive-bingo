@@ -1,17 +1,15 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using System.Collections;
 
 public class guestheword : MonoBehaviour
 {
     public GameObject guestheword2;
+    Gamemanager gamemanager;
     public TMP_InputField playerInput;
 
     void Start()
     {
-
+        gamemanager = GameObject.Find("GameManager").GetComponent<Gamemanager>();
     }
 
     void Update()
@@ -32,21 +30,12 @@ public class guestheword : MonoBehaviour
         if (userAnswer == correctAnswer)
         {
             //correct
-            guestheword2.SetActive(false);
-            playerInput.GetComponent<Image>().color = Color.green;
-            StartCoroutine(white());
+            gamemanager.CompleteMinigame();
+            GameObject.Destroy(guestheword2);
         }
         else
         {
-            playerInput.GetComponent<Image>().color = Color.red;
-            StartCoroutine(white());
-            //wrong
+            Debug.Log("wrong");
         }
-    }
-
-    IEnumerator white()
-    {
-        yield return new WaitForSeconds(1);
-        playerInput.GetComponent<Image>().color = Color.white;
     }
 }
