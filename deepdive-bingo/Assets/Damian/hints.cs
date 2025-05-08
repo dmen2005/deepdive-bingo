@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using System.Collections;
 
 
 public class hints : MonoBehaviour
@@ -81,6 +83,9 @@ public class hints : MonoBehaviour
 
         if (correctBool)
         {
+            playerInput.GetComponent<Image>().color = Color.green;
+            StartCoroutine(white());
+
             location.questions.RemoveAt(0);
 
             if (gameManager.uncompletedLocations.Count > 0)
@@ -95,6 +100,7 @@ public class hints : MonoBehaviour
                 }
                 else
                 {
+
                     if (location.questions.Count == 0)
                     {
                         completionPanel.SetActive(true);
@@ -137,7 +143,16 @@ public class hints : MonoBehaviour
         }
         else
         {
+             playerInput.GetComponent<Image>().color = Color.red;
+            StartCoroutine(white());
             //wrong
         }
+    }
+
+    IEnumerator white()
+    {
+        yield return new WaitForSeconds(1);
+        playerInput.GetComponent<Image>().color = Color.white;
+
     }
 }
