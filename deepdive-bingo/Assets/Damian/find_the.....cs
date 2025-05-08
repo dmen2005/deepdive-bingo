@@ -1,4 +1,3 @@
-using System.Globalization;
 using UnityEngine;
 
 public class find_the: MonoBehaviour
@@ -22,8 +21,9 @@ public class find_the: MonoBehaviour
 
         if (objfound == 3)
         {
-            findthemistake.SetActive(false);
             objfound = 0;
+            GameObject.Find("GameManager").GetComponent<Gamemanager>().CompleteMinigame();
+            GameObject.Destroy(gameObject);
         }
     }
 }
